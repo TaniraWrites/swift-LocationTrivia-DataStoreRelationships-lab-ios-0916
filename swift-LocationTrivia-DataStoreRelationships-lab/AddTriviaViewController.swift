@@ -30,6 +30,7 @@ class AddTriviaViewController: UIViewController {
         self.cancelTriviaButton.accessibilityLabel = "Cancel Button"
     }
     
+ 
     
     
     @IBOutlet weak var inputTrivia: UITextField!
@@ -42,9 +43,9 @@ class AddTriviaViewController: UIViewController {
     
     
     @IBAction func submitTrivia(_ sender: AnyObject) {
-        if inputTrivia.text != "" {
-            var trivia = Trivium(content: inputTrivia.text!, likes: 0)
-            location.trivia.append(trivia)
+        if inputTrivia.text != " " {
+            let triviaContent = Trivium(content: inputTrivia.text!, likes: 0)
+            location.trivia.append(triviaContent)
             self.dismiss(animated: true, completion: nil)
         }
         

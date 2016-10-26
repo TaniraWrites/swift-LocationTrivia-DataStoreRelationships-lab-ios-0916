@@ -20,9 +20,14 @@ class TriviaTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.accessibilityLabel = "Trivia Table"
         self.tableView.accessibilityIdentifier = "Trivia Table"
-        self.tableView.reloadData()
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,14 +51,13 @@ class TriviaTableViewController: UITableViewController {
         return cell
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "triviaSegue"{
-//            if let dest = segue.destination as? AddTriviaViewController,
-//                let indexPath = tableView.indexPathForSelectedRow {
-//                dest.location = store.locationArray[indexPath.row]
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? AddTriviaViewController{
+                dest.location = self.location
+                print("blahhhhhhh")
+            }
+        }
+    
     
     
 }

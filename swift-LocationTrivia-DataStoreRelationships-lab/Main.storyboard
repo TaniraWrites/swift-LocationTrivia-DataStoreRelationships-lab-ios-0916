@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" title="Trivia" id="l7L-VK-A47">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uF2-EX-5Bw">
                             <connections>
-                                <segue destination="GdZ-gc-jcA" kind="presentation" id="VeG-be-26j"/>
+                                <segue destination="GdZ-gc-jcA" kind="presentation" identifier="triviaSegue" id="VeG-be-26j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
